@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +35,43 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.chrono{
+  width: fit-content;
+}
+
+.dsp{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0.5rem;
+  min-width:fit-content;
+  border: solid 1px black;
+  width: fit-content;
+  background-color: goldenrod;
+}
+
+.digit{
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-style:italic;
+  font-weight:600;
+  margin: 0.5rem;
+  border-bottom: 1px dotted blue ;
+}
+
+.control{
+  background: gray;
+}
+
+.title{
+  background-color: cadetblue;
+}
+
+button{  
+  border-radius: 0.5rem;
+  width: 75px;
+  height: 25px;  
 }
