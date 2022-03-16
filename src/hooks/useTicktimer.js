@@ -20,7 +20,7 @@ export const useTicktimer = (initialValue = 0) => {
     }
 
     const stamp = ()=>{
-        setStamps([...stamps, count])
+        if (running) setStamps([...stamps, count])
     }
 
     const reset = (c = 0) => setCount(c)
