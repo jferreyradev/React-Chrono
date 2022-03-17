@@ -1,8 +1,16 @@
 import Display from "./Display"
 
-const StampsTimes = ({times})=>{
+const StampsTimes = ({ times }) => {
     return (
-        times.map((t,i)=><Display count={t} key={i} />)
+        <div>
+            {
+                times.map((t, i) => {
+                    return (
+                            <Display time={t} key={i} />                        
+                    )
+                })
+            }
+        </div>
     )
 }
 

@@ -12,7 +12,7 @@ function App() {
         <Chrono title="chrono 2" />
       </main>
     </div>
-  );
+  )
 }
 
 export default App;

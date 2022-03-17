@@ -4,14 +4,15 @@ import StampsTimes from "./StampsTimes";
 
 const Chrono = ({ title }) => {
 
-  const [running, count, stamps, methods] = useTicktimer()
+  const [running, count, stamps, methods, time] = useTicktimer()
 
   return (
     <div>
       <div>
         <h3>{title}</h3>
       </div>
-      <Display count={count} />
+      <Display time={time()} />
+      
       <div >
         <button onClick={() => { running ? methods.pause() : methods.start() }} >
           {!running ? "Start" : "Pause"}
@@ -19,9 +20,8 @@ const Chrono = ({ title }) => {
         <button onClick={() => methods.reset()}>Reset</button>
         <button onClick={() => methods.stamp()}>Stamp</button>
       </div>
-      <div>        
-        <StampsTimes times={stamps} />
-      </div>
+      
+      <StampsTimes times={stamps} />
 
     </div>
   )
