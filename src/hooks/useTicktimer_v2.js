@@ -1,30 +1,32 @@
-import { getActiveElement } from "@testing-library/user-event/dist/utils";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export const useTicktimer = (initialValue = 0) => {
+export function useTicktimer(initialValue = 0) {
 
-    const [count, setCount] = useState(initialValue)
-    const [running, setRunning] = useState(false)
-    const [id, setId] = useState(0)
+    const [count, setCount] = useState(initialValue);
+    const [running, setRunning] = useState(false);
     const [stamps, setStamps] = useState([])
 
-    const start = (t = 100) => {
-        setId(setInterval(() => setCount((c) => c + 1), 100));
-        setRunning(true)
-        console.log("init", id)
-    }
+    useEffect(() => {
+        let id = 0
+        if (running) {
+            id = (setInterval(() => setCount((c) => c + 1), 100))
+            console.log("init", id)
+        }
+        return () => {
+            clearInterval(id);
+            console.log("clear", id)
+        };
+    }, [running]);
 
-    const pause = () => {
-        clearInterval(id);
-        setRunning(false)
-        console.log("clear", id)
-    }
+    const start = () => setRunning(true)
+
+    const pause = () => setRunning(false)
+
+    const reset = (c = 0) => setCount(c)
 
     const stamp = () => {
         if (running) setStamps([...stamps, time()])
-    }
-
-    const reset = (c = 0) => setCount(c)
+    }   
 
     const hours = (t) => Math.floor(t / 36000)
     const minutes = (t) => {

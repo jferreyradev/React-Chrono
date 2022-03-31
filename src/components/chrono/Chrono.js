@@ -1,4 +1,4 @@
-import { useTicktimer } from "../../hooks/useTicktimer";
+import { useTicktimer } from "../../hooks/useTicktimer_v2";
 import Display from "./Display";
 import StampsTimes from "./StampsTimes";
 
