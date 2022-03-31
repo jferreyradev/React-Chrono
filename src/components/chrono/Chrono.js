@@ -4,7 +4,7 @@ import StampsTimes from "./StampsTimes";
 
 const Chrono = ({ title }) => {
 
-  const [running, count, stamps, methods, time] = useTicktimer()
+  const [running, stamps, methods, time] = useTicktimer()
 
   return (
     <div>

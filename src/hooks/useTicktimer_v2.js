@@ -45,6 +45,6 @@ export function useTicktimer(initialValue = 0) {
         }
     }
 
-    return [running, count, stamps, { start, pause, reset, stamp }, time]
+    return [running, stamps, { start, pause, reset, stamp }, time]
 
 }
